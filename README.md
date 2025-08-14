@@ -1,35 +1,35 @@
-**NOTICE:** This was formerly the `@greymass/eosio` library distributed on [npmjs](https://www.npmjs.com/package/@greymass/eosio). Future distributions will be made using the new organization and namespace, and distributed as `@wharfkit/antelope` again on [npmjs](https://www.npmjs.com/package/@wharfkit/antelope).
+**NOTICE:** This was formerly the `@greymass/eosio` library distributed on [npmjs](https://www.npmjs.com/package/@greymass/eosio). Future distributions will be made using the new organization and namespace, and distributed as `@pixelgeniusid/antelope` again on [npmjs](https://www.npmjs.com/package/@pixelgeniusid/antelope).
 
-To update your codebase, remove the `@greymass/eosio` library and add the `@wharfkit/antelope` library, then replace all instances of `@greymass/eosio` with `@wharfkit/antelope` in all files.
+To update your codebase, remove the `@greymass/eosio` library and add the `@pixelgeniusid/antelope` library, then replace all instances of `@greymass/eosio` with `@pixelgeniusid/antelope` in all files.
 
-# @wharfkit/antelope
+# @pixelgeniusid/antelope
 
 JavaScript library for working with Antelope powered blockchains (formerly EOSIO, still compatible with EOSIO).
 
-Avaiable on npm: https://www.npmjs.com/package/@wharfkit/antelope
+Avaiable on npm: https://www.npmjs.com/package/@pixelgeniusid/antelope
 
 ## Install
 
 ```
-npm install @wharfkit/antelope
+npm install @pixelgeniusid/antelope
 ```
 
 ## API Documentation
 
-https://wharfkit.github.io/antelope/
+https://pixelgeniusid.github.io/antelope/
 
 ## Documentation
 
 Documentation beyond the automatically generated API documentation above is currently incomplete. Until full documentation is complete, the tests themselves provide good reference material on how to do nearly everything.
 
-https://github.com/wharfkit/antelope/tree/master/test
+https://github.com/pixelgeniusid/antelope/tree/master/test
 
 More:
 
--   Using APIs: https://github.com/wharfkit/antelope/blob/master/test/api.ts
--   Serialization: https://github.com/wharfkit/antelope/blob/master/test/serializer.ts
--   Crypto Operations: https://github.com/wharfkit/antelope/blob/master/test/crypto.ts
--   Primitive Data Types: https://github.com/wharfkit/antelope/blob/master/test/chain.ts
+-   Using APIs: https://github.com/pixelgeniusid/antelope/blob/master/test/api.ts
+-   Serialization: https://github.com/pixelgeniusid/antelope/blob/master/test/serializer.ts
+-   Crypto Operations: https://github.com/pixelgeniusid/antelope/blob/master/test/crypto.ts
+-   Primitive Data Types: https://github.com/pixelgeniusid/antelope/blob/master/test/chain.ts
 
 ## Reporting Issues
 
@@ -71,7 +71,7 @@ make test
 make coverage
 ```
 
-The report for the current version can also be found at: https://wharfkit.github.io/antelope/coverage/
+The report for the current version can also be found at: https://pixelgeniusid.github.io/antelope/coverage/
 
 ### Run the test suite in a browser:
 
@@ -79,7 +79,7 @@ The report for the current version can also be found at: https://wharfkit.github
 make browser-test
 ```
 
-The browser test suite for the current version of the library is available at: https://wharfkit.github.io/antelope/tests.html
+The browser test suite for the current version of the library is available at: https://pixelgeniusid.github.io/antelope/tests.html
 
 ## Debugging
 
