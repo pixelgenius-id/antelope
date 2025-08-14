@@ -16,20 +16,20 @@ npm install @pixelgeniusid/antelope
 
 ## API Documentation
 
-https://pixelgeniusid.github.io/antelope/
+https://pixelgenius-id.github.io/antelope/
 
 ## Documentation
 
 Documentation beyond the automatically generated API documentation above is currently incomplete. Until full documentation is complete, the tests themselves provide good reference material on how to do nearly everything.
 
-https://github.com/pixelgeniusid/antelope/tree/master/test
+https://github.com/pixelgenius-id/antelope/tree/master/test
 
 More:
 
--   Using APIs: https://github.com/pixelgeniusid/antelope/blob/master/test/api.ts
--   Serialization: https://github.com/pixelgeniusid/antelope/blob/master/test/serializer.ts
--   Crypto Operations: https://github.com/pixelgeniusid/antelope/blob/master/test/crypto.ts
--   Primitive Data Types: https://github.com/pixelgeniusid/antelope/blob/master/test/chain.ts
+-   Using APIs: https://github.com/pixelgenius-id/antelope/blob/master/test/api.ts
+-   Serialization: https://github.com/pixelgenius-id/antelope/blob/master/test/serializer.ts
+-   Crypto Operations: https://github.com/pixelgenius-id/antelope/blob/master/test/crypto.ts
+-   Primitive Data Types: https://github.com/pixelgenius-id/antelope/blob/master/test/chain.ts
 
 ## Reporting Issues
 
@@ -71,7 +71,7 @@ make test
 make coverage
 ```
 
-The report for the current version can also be found at: https://pixelgeniusid.github.io/antelope/coverage/
+The report for the current version can also be found at: https://pixelgenius-id.github.io/antelope/coverage/
 
 ### Run the test suite in a browser:
 
@@ -79,7 +79,7 @@ The report for the current version can also be found at: https://pixelgeniusid.g
 make browser-test
 ```
 
-The browser test suite for the current version of the library is available at: https://pixelgeniusid.github.io/antelope/tests.html
+The browser test suite for the current version of the library is available at: https://pixelgenius-id.github.io/antelope/tests.html
 
 ## Debugging
 
