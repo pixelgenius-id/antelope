@@ -209,12 +209,12 @@ suite('chain', function () {
         }
         const action = Action.from({
             authorization: [],
-            account: 'eosio.token',
+            account: 'vex.token',
             name: 'transfer',
             data: Transfer.from({
                 from: 'foo',
                 to: 'bar',
-                quantity: '1.0000 EOS',
+                quantity: '1.0000 VEX',
                 memo: 'hello',
             }),
         })
@@ -250,13 +250,13 @@ suite('chain', function () {
             ref_block_prefix: 3306698594,
             actions: [
                 {
-                    account: 'eosio.token',
+                    account: 'vex.token',
                     name: 'transfer',
                     authorization: [{actor: 'foo', permission: 'active'}],
                     data: {
                         from: 'donkeyhunter',
                         memo: 'Anchor is the best! Thank you <3',
-                        quantity: '0.0001 EOS',
+                        quantity: '0.0001 VEX',
                         to: 'teamgreymass',
                     },
                 },
@@ -278,7 +278,7 @@ suite('chain', function () {
             actions: [{name: 'transfer', type: 'transfer', ricardian_contract: ''}],
         }
         const r1 = Transaction.from(tx, abi)
-        const r2 = Transaction.from(tx, [{abi, contract: 'eosio.token'}])
+        const r2 = Transaction.from(tx, [{abi, contract: 'vex.token'}])
         assert.equal(r1.equals(r2), true)
         assert.deepEqual(
             JSON.parse(JSON.stringify(r1.actions[0].decodeData(abi))),
@@ -324,7 +324,7 @@ suite('chain', function () {
         assert.equal(checksum.equals('108f07b8382412612c048d07d13f814118445acd'), true)
         assert.equal(checksum.equals('108f07b8382412612c048d07d13f814118445abe'), false)
 
-        const pubKey = PublicKey.from('EOS6RrvujLQN1x5Tacbep1KAk8zzKpSThAQXBCKYFfGUYeABhJRin')
+        const pubKey = PublicKey.from('VEX6RrvujLQN1x5Tacbep1KAk8zzKpSThAQXBCKYFfGUYeABhJRin')
         assert.equal(
             pubKey.equals('PUB_K1_6RrvujLQN1x5Tacbep1KAk8zzKpSThAQXBCKYFfGUYeACcSRFs'),
             true
@@ -449,7 +449,7 @@ suite('chain', function () {
             context_free_actions: [],
             actions: [
                 {
-                    account: 'eosio.token',
+                    account: 'vex.token',
                     name: 'transfer',
                     authorization: [{actor: 'corecorecore', permission: 'active'}],
                     data:
@@ -479,7 +479,7 @@ suite('chain', function () {
             context_free_actions: [],
             actions: [
                 {
-                    account: 'eosio.token',
+                    account: 'vex.token',
                     name: 'transfer',
                     authorization: [{actor: 'corecorecore', permission: 'active'}],
                     data:
@@ -600,13 +600,13 @@ suite('chain', function () {
 
         const action = Action.from(
             {
-                account: 'eosio.token',
+                account: 'vex.token',
                 name: 'transfer',
                 authorization: [{actor: 'foo', permission: 'bar'}],
                 data: {
                     from: 'foo',
                     to: 'bar',
-                    quantity: '1.0000 EOS',
+                    quantity: '1.0000 VEX',
                     memo: 'hello',
                 },
             },
@@ -635,13 +635,13 @@ suite('chain', function () {
         const data = Transfer.from({
             from: 'foo',
             to: 'bar',
-            quantity: '1.0000 EOS',
+            quantity: '1.0000 VEX',
             memo: 'hello',
         })
 
         const action = Action.from({
             authorization: [],
-            account: 'eosio.token',
+            account: 'vex.token',
             name: 'transfer',
             data,
         })
@@ -679,7 +679,7 @@ suite('chain', function () {
         const data = Transfer.from({
             from: 'foo',
             to: 'bar',
-            quantity: '1.0000 EOS',
+            quantity: '1.0000 VEX',
             memo: 'hello',
         })
 
@@ -690,7 +690,7 @@ suite('chain', function () {
                     permission: 'bar',
                 },
             ],
-            account: 'eosio.token',
+            account: 'vex.token',
             name: 'transfer',
             data,
         })
@@ -710,7 +710,7 @@ suite('chain', function () {
             threshold: 21,
             keys: [
                 {
-                    key: 'EOS6RrvujLQN1x5Tacbep1KAk8zzKpSThAQXBCKYFfGUYeABhJRin',
+                    key: 'VEX6RrvujLQN1x5Tacbep1KAk8zzKpSThAQXBCKYFfGUYeABhJRin',
                     weight: 20,
                 },
                 {
@@ -720,7 +720,7 @@ suite('chain', function () {
             ],
             waits: [{wait_sec: 10, weight: 1}],
         })
-        assert.ok(auth.hasPermission('EOS6RrvujLQN1x5Tacbep1KAk8zzKpSThAQXBCKYFfGUYeABhJRin'))
+        assert.ok(auth.hasPermission('VEX6RrvujLQN1x5Tacbep1KAk8zzKpSThAQXBCKYFfGUYeABhJRin'))
         assert.ok(
             auth.hasPermission('PUB_R1_82ua5qburg82c9eWY1qZVNUAAD6VPHsTMoPMGDrk7s4BQgxEoc', true)
         )

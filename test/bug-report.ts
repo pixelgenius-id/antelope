@@ -6,8 +6,8 @@ import {Asset} from '$lib'
 suite('bug-report', function () {
     test('Edit this string to include a brief description of the issue', function () {
         // Write code here that reproduces the issue.
-        const balance = Asset.from('0.0001 EOS')
+        const balance = Asset.from('0.0001 VEX')
         // Use chai to create assertions with the expected types and values.
-        // assert.equal(String(balance), '0.0002 EOS') // This will fail the test
+        // assert.equal(String(balance), '0.0002 VEX') // This will fail the test
     })
 })

@@ -120,7 +120,7 @@ suite('p2p', function () {
         {
             message: P2P.SignedBlock.from({
                 timeSlot: 1163721185,
-                producer: 'eosio',
+                producer: 'vexcore',
                 confirmed: 0,
                 previous: '00000006cdcc27dd5599c2bf11d6086315f7f3e20dab443b28b7a3a7b3e9b498',
                 transaction_mroot:

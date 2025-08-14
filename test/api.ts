@@ -99,8 +99,8 @@ suite('api v1', function () {
     })
 
     test('chain get_abi', async function () {
-        const response = await jungle4.v1.chain.get_abi('eosio.token')
-        assert.equal(response.account_name, 'eosio.token')
+        const response = await jungle4.v1.chain.get_abi('vex.token')
+        assert.equal(response.account_name, 'vex.token')
         assert.isObject(response.abi)
         if (response.abi) {
             assert.equal(response.abi.version, 'eosio::abi/1.2')
@@ -109,7 +109,7 @@ suite('api v1', function () {
 
     test('ABI to blob to ABI', async function () {
         // Get an ABI from the API
-        const response = await jungle4.v1.chain.get_abi('eosio.token')
+        const response = await jungle4.v1.chain.get_abi('vex.token')
         if (!response.abi) {
             throw Error('unable to load ABI')
         }
@@ -136,10 +136,10 @@ suite('api v1', function () {
     })
 
     test('chain get_raw_abi', async function () {
-        const response = await jungle4.v1.chain.get_raw_abi('eosio.token')
+        const response = await jungle4.v1.chain.get_raw_abi('vex.token')
         assert.instanceOf(response, API.v1.GetRawAbiResponse)
         assert.instanceOf(response.account_name, Name)
-        assert.equal(response.account_name, 'eosio.token')
+        assert.equal(response.account_name, 'vex.token')
         assert.instanceOf(response.code_hash, Checksum256)
         assert.equal(
             response.code_hash,
@@ -167,7 +167,7 @@ suite('api v1', function () {
     })
 
     test('chain get_code', async function () {
-        const response = await jungle4.v1.chain.get_code('eosio.token')
+        const response = await jungle4.v1.chain.get_code('vex.token')
         assert.instanceOf(response, API.v1.GetCodeResponse)
     })
 
@@ -185,8 +185,8 @@ suite('api v1', function () {
     })
 
     test('chain get_account (system account)', async function () {
-        const account = await jungle.v1.chain.get_account('eosio')
-        assert.equal(String(account.account_name), 'eosio')
+        const account = await jungle.v1.chain.get_account('vexcore')
+        assert.equal(String(account.account_name), 'vexcore')
     })
 
     test('chain get_account (fio)', async function () {
@@ -220,7 +220,7 @@ suite('api v1', function () {
         assert.equal(String(account.account_name), 'wharfkit1115')
         const permission = account.getPermission(Name.from('test'))
         assert.equal(permission.linked_actions.length, 1)
-        assert.isTrue(permission.linked_actions[0].account.equals('eosio.token'))
+        assert.isTrue(permission.linked_actions[0].account.equals('vex.token'))
         assert.isTrue(permission.linked_actions[0].action.equals('transfer'))
     })
 
@@ -242,12 +242,12 @@ suite('api v1', function () {
 
     test('chain get_accounts_by_authorizers (accounts)', async function () {
         const response = await jungle4.v1.chain.get_accounts_by_authorizers({
-            accounts: ['eosio.prods'],
+            accounts: ['vex.prods'],
         })
         assert.lengthOf(response.accounts, 1)
-        assert.isTrue(response.accounts[0].account_name.equals('eosio'))
+        assert.isTrue(response.accounts[0].account_name.equals('vexcore'))
         assert.isTrue(response.accounts[0].permission_name.equals('active'))
-        assert.isTrue(response.accounts[0].authorizing_account.actor.equals('eosio.prods'))
+        assert.isTrue(response.accounts[0].authorizing_account.actor.equals('vex.prods'))
         assert.isTrue(response.accounts[0].authorizing_account.permission.equals('active'))
         assert.isTrue(response.accounts[0].weight.equals(1))
         assert.isTrue(response.accounts[0].threshold.equals(1))
@@ -376,17 +376,17 @@ suite('api v1', function () {
     })
 
     test('chain get_currency_balance', async function () {
-        const balances = await jungle.v1.chain.get_currency_balance('eosio.token', 'lioninjungle')
+        const balances = await jungle.v1.chain.get_currency_balance('vex.token', 'lioninjungle')
         assert.equal(balances.length, 2)
         balances.forEach((asset) => {
             assert.equal(asset instanceof Asset, true)
         })
-        assert.deepEqual(balances.map(String), ['539235868.8986 EOS', '100360.0680 JUNGLE'])
+        assert.deepEqual(balances.map(String), ['539235868.8986 VEX', '100360.0680 JUNGLE'])
     })
 
     test('chain get_currency_balance w/ symbol', async function () {
         const balances = await jungle.v1.chain.get_currency_balance(
-            'eosio.token',
+            'vex.token',
             'lioninjungle',
             'JUNGLE'
         )
@@ -395,7 +395,7 @@ suite('api v1', function () {
     })
 
     test('chain get_currency_stats', async function () {
-        const stats = await jungle4.v1.chain.get_currency_stats('eosio.token', 'EOS')
+        const stats = await jungle4.v1.chain.get_currency_stats('vex.token', 'VEX')
         assert.instanceOf(stats.EOS.supply, Asset)
         assert.instanceOf(stats.EOS.max_supply, Asset)
         assert.instanceOf(stats.EOS.issuer, Name)
@@ -443,13 +443,13 @@ suite('api v1', function () {
                     permission: 'active',
                 },
             ],
-            account: 'eosio.token',
+            account: 'vex.token',
             name: 'transfer',
             data: Transfer.from({
                 from: 'corecorecore',
                 to: 'teamgreymass',
-                quantity: '0.0042 EOS',
-                memo: 'eosio-core is the best <3',
+                quantity: '0.0042 VEX',
+                memo: 'vexcore is the best <3',
             }),
         })
         const transaction = Transaction.from({
@@ -476,13 +476,13 @@ suite('api v1', function () {
                     permission: 'active',
                 },
             ],
-            account: 'eosio.token',
+            account: 'vex.token',
             name: 'transfer',
             data: Transfer.from({
                 from: 'corecorecore',
                 to: 'teamgreymass',
-                quantity: '0.0042 EOS',
-                memo: 'eosio-core is the best <3',
+                quantity: '0.0042 VEX',
+                memo: 'vex-core is the best <3',
             }),
         })
         const transaction = Transaction.from({
@@ -509,13 +509,13 @@ suite('api v1', function () {
                     permission: 'active',
                 },
             ],
-            account: 'eosio.token',
+            account: 'vex.token',
             name: 'transfer',
             data: Transfer.from({
                 from: 'corecorecore',
                 to: 'teamgreymass',
-                quantity: '0.0042 EOS',
-                memo: 'eosio-core is the best <3',
+                quantity: '0.0042 VEX',
+                memo: 'vex-core is the best <3',
             }),
         })
         const transaction = Transaction.from({
@@ -542,13 +542,13 @@ suite('api v1', function () {
                     permission: 'active',
                 },
             ],
-            account: 'eosio.token',
+            account: 'vex.token',
             name: 'transfer',
             data: {
                 from: 'corecorecore',
                 to: 'teamgreymass',
-                quantity: '0.0042 EOS',
-                memo: 'eosio-core is the best <3',
+                quantity: '0.0042 VEX',
+                memo: 'vex-core is the best <3',
             },
         }
         const {abi} = await jungle.v1.chain.get_abi(untypedAction.account)
@@ -620,13 +620,13 @@ suite('api v1', function () {
 
     test('chain get_table_rows (untyped)', async function () {
         const res = await eos.v1.chain.get_table_rows({
-            code: 'eosio.token',
+            code: 'vex.token',
             table: 'stat',
-            scope: Asset.Symbol.from('4,EOS').code.value.toString(),
+            scope: Asset.Symbol.from('4,VEX').code.value.toString(),
             key_type: 'i64',
         })
         assert.equal(res.rows.length, 1)
-        assert.equal(res.rows[0].max_supply, '10000000000.0000 EOS')
+        assert.equal(res.rows[0].max_supply, '10000000000.0000 VEX')
     })
 
     test('chain get_table_rows (typed)', async function () {
@@ -658,7 +658,7 @@ suite('api v1', function () {
 
     test('chain get_table_rows (empty scope)', async function () {
         const res = await jungle.v1.chain.get_table_rows({
-            code: 'eosio',
+            code: 'vexcore',
             table: 'powup.state',
             scope: '',
         })
@@ -667,18 +667,18 @@ suite('api v1', function () {
 
     test('chain get_table_rows (ram payer)', async function () {
         const res = await eos.v1.chain.get_table_rows({
-            code: 'eosio.token',
+            code: 'vex.token',
             table: 'stat',
-            scope: Asset.SymbolCode.from('EOS').value,
+            scope: Asset.SymbolCode.from('VEX').value,
             show_payer: true,
         })
         assert.equal(res.rows.length, 1)
-        assert.equal(String(res.ram_payers![0]), 'eosio.token')
+        assert.equal(String(res.ram_payers![0]), 'vex.token')
     })
 
     test('chain get_table_by_scope', async function () {
         const res = await eos.v1.chain.get_table_by_scope({
-            code: 'eosio.token',
+            code: 'vex.token',
             table: 'accounts',
             limit: 1,
         })
@@ -687,7 +687,7 @@ suite('api v1', function () {
             assert.equal(row instanceof API.v1.GetTableByScopeResponseRow, true)
         })
         const res2 = await eos.v1.chain.get_table_by_scope({
-            code: 'eosio.token',
+            code: 'vex.token',
             table: 'accounts',
             lower_bound: res.more,
             upper_bound: res.more,
@@ -826,7 +826,7 @@ suite('api v1', function () {
                     base: '',
                     fields: [
                         {
-                            name: 'eos_account',
+                            name: ' vex_account',
                             type: 'name',
                         },
                     ],
@@ -858,7 +858,7 @@ suite('api v1', function () {
                     permission: 'active',
                 },
             ],
-            account: 'eosio',
+            account: 'vexcore',
             name: 'setabi',
             data: {
                 abi: Serializer.encode({object: ABI.from(raw)}),

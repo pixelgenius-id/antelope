@@ -716,7 +716,7 @@ suite('serializer', function () {
                     {
                         actions: [
                             {
-                                account: 'eosio.token',
+                                account: 'vex.token',
                                 name: 'transfer',
                                 authorization: [{actor: 'foo', permission: 'active'}],
                                 data: '000000000000285d000000000000ae39e80300000000000003454f53000000000b68656c6c6f207468657265',
@@ -755,7 +755,7 @@ suite('serializer', function () {
                         context_free_actions: [],
                         actions: [
                             {
-                                account: 'eosio.token',
+                                account: 'vex.token',
                                 name: 'transfer',
                                 authorization: [{actor: 'foo', permission: 'active'}],
                                 data: '000000000000285d000000000000ae39e80300000000000003454f53000000000b68656c6c6f207468657265',
@@ -1030,7 +1030,7 @@ suite('serializer', function () {
             expiration: 992,
             actions: [
                 {
-                    account: 'eosio.token',
+                    account: 'vex.token',
                     name: 'transfer',
                     authorization: [{actor: 'foo', permission: 'active'}],
                     data: '0000000000855c340000000000000e3da40100000000000001474d5a0000000007666f7220796f75',
@@ -1047,7 +1047,7 @@ suite('serializer', function () {
             context_free_actions: [],
             actions: [
                 {
-                    account: 'eosio.token',
+                    account: 'vex.token',
                     name: 'transfer',
                     authorization: [{actor: 'foo', permission: 'active'}],
                     data: '0000000000855c340000000000000e3da40100000000000001474d5a0000000007666f7220796f75',
@@ -1243,7 +1243,7 @@ suite('serializer', function () {
                     base: '',
                     fields: [
                         {
-                            name: 'eos_account',
+                            name: 'vex_account',
                             type: 'name',
                         },
                     ],

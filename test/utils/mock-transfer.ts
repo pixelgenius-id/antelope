@@ -18,8 +18,8 @@ export async function makeMockTransaction(
     const transfer = Transfer.from({
         from: 'corecorecore',
         to: 'teamgreymass',
-        quantity: '0.0042 EOS',
-        memo: memo || 'eosio-core is the best <3',
+        quantity: '0.0042 VEX',
+        memo: memo || 'vex-core is the best <3',
     })
     // Assemble action with action data and metadata
     const action = Action.from({
@@ -29,7 +29,7 @@ export async function makeMockTransaction(
                 permission: 'active',
             },
         ],
-        account: 'eosio.token',
+        account: 'vex.token',
         name: 'transfer',
         data: transfer,
     })

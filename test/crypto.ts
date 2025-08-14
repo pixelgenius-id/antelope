@@ -25,9 +25,9 @@ suite('crypto', function () {
         const key = PublicKey.from('PUB_K1_6RrvujLQN1x5Tacbep1KAk8zzKpSThAQXBCKYFfGUYeACcSRFs')
         assert.equal(key.type, 'K1')
         assert.equal(key.toString(), 'PUB_K1_6RrvujLQN1x5Tacbep1KAk8zzKpSThAQXBCKYFfGUYeACcSRFs')
-        assert.equal(key.toLegacyString(), 'EOS6RrvujLQN1x5Tacbep1KAk8zzKpSThAQXBCKYFfGUYeABhJRin')
+        assert.equal(key.toLegacyString(), 'VEX6RrvujLQN1x5Tacbep1KAk8zzKpSThAQXBCKYFfGUYeABhJRin')
         assert.equal(
-            PublicKey.from('EOS6RrvujLQN1x5Tacbep1KAk8zzKpSThAQXBCKYFfGUYeABhJRin').toString(),
+            PublicKey.from('VEX6RrvujLQN1x5Tacbep1KAk8zzKpSThAQXBCKYFfGUYeABhJRin').toString(),
             'PUB_K1_6RrvujLQN1x5Tacbep1KAk8zzKpSThAQXBCKYFfGUYeACcSRFs'
         )
         assert.equal(
@@ -47,7 +47,7 @@ suite('crypto', function () {
         assert.equal(pubKey.toString(), 'PUB_K1_87DUhBcZrLhyFfBVDyu1iWZJUGURqbk6CQxwv5g6iWUD2X45Hv')
         assert.equal(
             pubKey.toLegacyString(),
-            'EOS87DUhBcZrLhyFfBVDyu1iWZJUGURqbk6CQxwv5g6iWUCy9dCUJ'
+            'VEX87DUhBcZrLhyFfBVDyu1iWZJUGURqbk6CQxwv5g6iWUCy9dCUJ'
         )
         assert.equal(
             pubKey.toLegacyString('FIO'),
@@ -79,7 +79,7 @@ suite('crypto', function () {
         assert.equal(
             signature.verifyMessage(
                 message,
-                PublicKey.from('EOS7HBX4f8UknP5NNoX8ixCx4YrA8JcPhGbuQ7Xem8gmWg1nviTqR')
+                PublicKey.from('VEX7HBX4f8UknP5NNoX8ixCx4YrA8JcPhGbuQ7Xem8gmWg1nviTqR')
             ),
             false
         )
@@ -103,7 +103,7 @@ suite('crypto', function () {
         )
         assert.equal(
             recoveredKey.toLegacyString(),
-            'EOS6RrvujLQN1x5Tacbep1KAk8zzKpSThAQXBCKYFfGUYeABhJRin'
+            'VEX6RrvujLQN1x5Tacbep1KAk8zzKpSThAQXBCKYFfGUYeABhJRin'
         )
         assert.equal(
             recoveredKey.toLegacyString('FIO'),

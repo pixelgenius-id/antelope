@@ -38,7 +38,7 @@ export class PublicKey implements ABISerializableObject {
             const data = Base58.decodeRipemd160Check(parts[2], size, type)
             return new PublicKey(type, data)
         } else if (value.length >= 50) {
-            // Legacy EOS key
+            // Legacy VEX key
             const data = Base58.decodeRipemd160Check(value.slice(-50))
             return new PublicKey(KeyType.K1, data)
         } else {
@@ -82,10 +82,10 @@ export class PublicKey implements ABISerializableObject {
     }
 
     /**
-     * Return Antelope/EOSIO legacy (`EOS<base58data>`) formatted key.
+     * Return Antelope/EOSIO legacy (`VEX<base58data>`) formatted key.
      * @throws If the key type isn't `K1`
      */
-    toLegacyString(prefix = 'EOS') {
+    toLegacyString(prefix = 'VEX') {
         if (this.type !== KeyType.K1) {
             throw new Error('Unable to create legacy formatted string for non-K1 key')
         }
