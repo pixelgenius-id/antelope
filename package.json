@@ -7,6 +7,9 @@
     "main": "lib/antelope.js",
     "module": "lib/antelope.m.js",
     "types": "lib/antelope.d.ts",
+    "publishConfig": {
+        "access": "public"
+    },
     "browser": {
         "buffer": false,
         "crypto": false
