@@ -3,17 +3,17 @@
 
   
 
-Future distributions will be made using the new organization and namespace, and distributed as  @pixelgeniusid/antelopeagain on  [npmjs](https://www.npmjs.com/package/@pixelgeniusid/antelope).
+Future distributions for Vexanium blockchain will be made using the new organization and namespace, and distributed as @pixelgeniusid/antelope on [npmjs](https://www.npmjs.com/package/@pixelgeniusid/antelope).
 
   
 
 If you were previously using either  @greymass/eosio  or  @wharfkit/antelope, you can now use  @pixelgeniusid/antelopefor full compatibility with the  **VEXANIUM**  blockchain.
 
-To update your codebase, Remove the @greymass/eosio or @wharfkit/antelope library and add the `@pixelgeniusid/antelope` library, then replace all instances of `@greymass/eosio` with `@pixelgeniusid/antelope` in all files.
+To update your codebase, Remove the @greymass/eosio or @wharfkit/antelope library and add the `@pixelgeniusid/antelope` library, then replace all instances of `@greymass/eosio` and [@wharfkit/antelope](https://www.npmjs.com/package/@wharfkit/antelope) with `@pixelgeniusid/antelope` in all files.
 
 # @pixelgeniusid/antelope
 
-JavaScript library for working with Antelope powered blockchains (formerly EOSIO, still compatible with EOSIO).
+JavaScript library for working with Antelope powered blockchains (formerly EOSIO, still compatible with VEXANIUM).
 
 Avaiable on npm: https://www.npmjs.com/package/@pixelgeniusid/antelope
 
